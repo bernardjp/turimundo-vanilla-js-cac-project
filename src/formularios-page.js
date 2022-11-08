@@ -1,12 +1,8 @@
-import { inicializarBotonCarrito } from "./ui/botonCarrito.js";
-import { inicializarBotonBurgerMenu } from "./ui/botonBurgerMenu.js";
 import { inicializarFormulario } from "./form/formulario.js";
-import { inicializarNavbar } from "./ui/headerNavbar.js";
+import { inicializarHeader } from "./ui/header/header.js";
 
 function inicializar() {
-  inicializarNavbar();
-  inicializarBotonCarrito();
-  inicializarBotonBurgerMenu();
+  inicializarHeader();
   inicializarFormulario();
 }
 
