@@ -1,0 +1,19 @@
+{
+  "name": "turimundo-vanilla-js-cac-project",
+  "version": "1.0.0",
+  "description": "Codo a Codo FrontEnd TP",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bernardjp/turimundo-vanilla-js-cac-project.git"
+  },
+  "author": "JP Bernard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bernardjp/turimundo-vanilla-js-cac-project/issues"
+  },
+  "homepage": "https://github.com/bernardjp/turimundo-vanilla-js-cac-project#readme"
+}
