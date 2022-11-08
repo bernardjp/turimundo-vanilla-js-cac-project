@@ -9,4 +9,12 @@ function renderizarMensaje(texto) {
   }
 }
 
-export { renderizarMensaje };
+function renderizarAlertaFormulario(texto) {
+  Swal.fire({
+    title: "Campo incompleto",
+    text: texto,
+    icon: "error"
+  })
+}
+
+export { renderizarMensaje, renderizarAlertaFormulario };
