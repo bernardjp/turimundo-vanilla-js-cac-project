@@ -7,16 +7,18 @@ function inicializarFormulario() {
 
 function submitHandler(e) {
   e.preventDefault();
-
+  
+  const form = e.target;
   const formType = form.dataset.type;
   let formValido;
+
   if (formType === "viaje") formValido = validacionViaje();
   if (formType === "contacto") formValido = validacionContacto();
   
   if (formValido) {
-    const data = new FormData(e.target);
+    const data = new FormData(form);
 
-    fetch(e.target.action, {
+    fetch(form.action, {
         method: form.method,
         body: data,
         headers: {
@@ -33,7 +35,7 @@ function submitHandler(e) {
           });
         }
       })
-      .catch(error => {
+      .catch(() => {
         Swal.fire({
           title: "Tu mensaje no pudo ser enviado",
           text: "Ha surgido un error en el envío de tu mensaje. Por favor intenta más tarde.",
