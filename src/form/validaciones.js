@@ -3,7 +3,7 @@ const MAX_CHAR = 255;
 const MIN_CHAR = 0;
 const MONTO_MIN = 1;
 const MONTO_MAX = 100000000;
-const EMAIL_REGEX = /^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|ar|edu)+$/;
+const EMAIL_REGEX = /^\w+([.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|ar|edu)+$/;
 
 // Helper-functions para validaciones.
 const validarCaracteresMinimos = string => (string.length <= MIN_CHAR || string === null);
