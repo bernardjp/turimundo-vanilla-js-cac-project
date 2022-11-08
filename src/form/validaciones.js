@@ -1,3 +1,5 @@
+import { renderizarAlertaFormulario } from "../ui/mensaje.js";
+
 // Valores fijos.
 const MAX_CHAR = 255;
 const MIN_CHAR = 0;
@@ -14,12 +16,12 @@ const validarFormatoEmail = email => !(EMAIL_REGEX.test(email));
 const validarNombre = () => {
   const nombre = document.getElementById("nombre").value;
   if(validarCaracteresMinimos(nombre)) {
-    alert("Debe completar el nombre");
+    renderizarAlertaFormulario("Debe completar el nombre");
     return false;
   }
 
   if(validarCaracteresMaximos(nombre)) {
-    alert(`El nombre no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${nombre.length})`);
+    renderizarAlertaFormulario(`El nombre no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${nombre.length})`);
     return false;
   }
 
@@ -29,12 +31,12 @@ const validarNombre = () => {
 const validarApellido = () => {
   const apellido = document.getElementById("apellido").value;
   if(validarCaracteresMinimos(apellido)) {
-    alert("Debe completar el apellido");
+    renderizarAlertaFormulario("Debe completar el apellido");
     return false;
   }
 
   if(validarCaracteresMaximos(apellido)) {
-    alert(`El apellido no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${apellido.length})`);
+    renderizarAlertaFormulario(`El apellido no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${apellido.length})`);
     return false;
   }
 
@@ -44,12 +46,12 @@ const validarApellido = () => {
 const validarEmail = () => {
   const email = document.getElementById("email").value;
   if (validarFormatoEmail(email)){
-    alert("No es una direccion de email correcta");
+    renderizarAlertaFormulario("No es una direccion de email correcta");
     return false;
   }
 
   if(validarCaracteresMaximos(email)) {
-    alert(`El email no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${email.length})`);
+    renderizarAlertaFormulario(`El email no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${email.length})`);
     return false;
   }
 
@@ -59,12 +61,12 @@ const validarEmail = () => {
 const validarNombreLugar = () => {
   const lugar = document.getElementById("lugar").value;
   if(validarCaracteresMinimos(lugar)) {
-    alert("Debe escribir el país");
+    renderizarAlertaFormulario("Debe escribir el país");
     return false;
   }
 
   if(validarCaracteresMaximos(lugar)) {
-    alert(`El pais no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${lugar.length})`);
+    renderizarAlertaFormulario(`El pais no debe exceder los ${MAX_CHAR} caracteres. (actualmente ${lugar.length})`);
     return false;
   }
 
@@ -74,12 +76,12 @@ const validarNombreLugar = () => {
 const validarConsulta = () => {
   const consulta = document.getElementById('consulta').value;
   if(validarCaracteresMinimos(consulta)) {
-    alert("Por favor, escriba su consulta");
+    renderizarAlertaFormulario("Por favor, escriba su consulta");
     return false;
   }
 
   if(validarCaracteresMaximos(consulta, MAX_CHAR * 4)) {
-    alert(`La consulta no debe exceder los ${MAX_CHAR * 4} caracteres. (actualmente ${consulta.length})`);
+    renderizarAlertaFormulario(`La consulta no debe exceder los ${MAX_CHAR * 4} caracteres. (actualmente ${consulta.length})`);
     return false;
   }
 
@@ -92,12 +94,12 @@ const validarPasajeros = () => {
     const val = parseInt(pasajero.value);
 
     if (val > 10) {
-      alert(`Por favor, seleccione la cantidad de adultos que viajan. (max: 10)`);
+      renderizarAlertaFormulario(`Por favor, seleccione la cantidad de adultos que viajan. (max: 10)`);
       return false;
     }
 
     if (pasajero.name === "adultos" && val <= 0) {
-      alert(`Por favor, seleccione la cantidad de adultos que viajan. (min: 1, max: 10)`);
+      renderizarAlertaFormulario(`Por favor, seleccione la cantidad de adultos que viajan. (min: 1, max: 10)`);
       return false;
     }
   }
@@ -108,7 +110,7 @@ const validarPasajeros = () => {
 const validarCategoria = () => {
   const categoria = document.getElementById("categoria").selectedIndex;
   if(validarCaracteresMinimos(categoria)) {
-    alert("Por favor, seleccione qué categoría de hotel desea");
+    renderizarAlertaFormulario("Por favor, seleccione qué categoría de hotel desea");
     return false;
   }
 
@@ -118,7 +120,7 @@ const validarCategoria = () => {
 const validarPaqueteViaje = () => {
   const paquete = document.getElementById("paquete").selectedIndex;
   if(validarCaracteresMinimos(paquete)) {
-    alert("Por favor, seleccione qué tipo de paquete desea");
+    renderizarAlertaFormulario("Por favor, seleccione qué tipo de paquete desea");
     return false;
   }
 
@@ -128,7 +130,7 @@ const validarPaqueteViaje = () => {
 const validarComidas = () => {
   const comidas = document.getElementById("comidas").value;
   if(validarCaracteresMaximos(comidas, MAX_CHAR * 2)) {
-    alert(`La descripción de las comidas no debe exceder los ${MAX_CHAR * 2} caracteres. (actualmente ${comidas.length})`);
+    renderizarAlertaFormulario(`La descripción de las comidas no debe exceder los ${MAX_CHAR * 2} caracteres. (actualmente ${comidas.length})`);
     return false;
   }
 
@@ -138,12 +140,12 @@ const validarComidas = () => {
 const validarPresupuesto = () => {
   const presupuesto = document.getElementById("presupuesto").value;
   if(presupuesto < MONTO_MIN) {
-    alert(`El monto del presupuesto no debe ser inferior a ${MONTO_MIN},00 US$`);
+    renderizarAlertaFormulario(`El monto del presupuesto no debe ser inferior a $${MONTO_MIN},00`);
     return false;
   }
 
   if(presupuesto > MONTO_MAX) {
-    alert(`El monto del presupuesto no debe exceder los ${MONTO_MAX},00 US$`);
+    renderizarAlertaFormulario(`El monto del presupuesto no debe exceder los $${MONTO_MAX},00`);
     return false;
   }
 
