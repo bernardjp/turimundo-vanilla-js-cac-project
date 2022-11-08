@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/bernardjp/turimundo-vanilla-js-cac-project/issues"
   },
-  "homepage": "https://github.com/bernardjp/turimundo-vanilla-js-cac-project#readme"
+  "homepage": "https://github.com/bernardjp/turimundo-vanilla-js-cac-project#readme",
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "2.7.1"
+  }
 }
