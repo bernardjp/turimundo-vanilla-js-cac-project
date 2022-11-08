@@ -2,7 +2,7 @@ import { PaqueteDetalle } from "./componentes/PaqueteDetalle.js";
 import { obtenerDataDeJSON } from "../storage/jsonDataFetching.js";
 import { agregarALocalStorage } from "../storage/local-storage.js";
 import { filtrarItems } from "../utils/filtros-mappers.js";
-import { actualizarContadorCarrito } from "./botonCarrito.js";
+import { actualizarContadorCarrito } from "./header/botonCarrito.js";
 import { renderizarMensaje } from "./mensaje.js";
 import { modalHandler } from "./modal.js";
 
