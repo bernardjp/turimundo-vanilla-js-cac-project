@@ -21,7 +21,7 @@ class SlideCarrusel {
         <p>${this.slogan}</p>
         <a href="promociones.html?id=${this.id}" class="slide-btn-details" target="_blank">VER DETALLES</a>
       </div>
-      <img class="slide-image" src="Multimedia/imagenes/${this.id}.jpg" alt="${this.destino.pais}-picture">  
+      <img class="slide-image" src="assets/images/${this.id}.jpg" alt="${this.destino.pais}-picture">  
     `;
 
     return elementoContenedor;
