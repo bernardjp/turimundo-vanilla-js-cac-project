@@ -50,7 +50,7 @@
         "https://images.pexels.com/photos/1268855/pexels-photo-1268855.jpeg"
       ],
       "slogan": "Una experiencia imperdible de 5 días y 4 noches en un paraíso terrenal",
-      "promocion": "1",
+      "promocion": "true",
       "stock": "21"
     },
     {
@@ -103,7 +103,7 @@
         "https://images.pexels.com/photos/1750754/pexels-photo-1750754.jpeg"
       ],
       "slogan": "Viví las maravillas naturales de Canadá por 12 días y 11 noches",
-      "promocion": "1",
+      "promocion": "true",
       "stock": "14"
     },
     {
@@ -156,7 +156,7 @@
         "https://images.pexels.com/photos/5198285/pexels-photo-5198285.jpeg"
       ],
       "slogan": "Conocé las ruinas Incas y todos sus secretos por 8 días y 7 noches",
-      "promocion": "1",
+      "promocion": "true",
       "stock": "9"
     },
     {
@@ -209,7 +209,7 @@
         "https://images.pexels.com/photos/11434425/pexels-photo-11434425.jpeg"
       ],
       "slogan": "Un destino exótico para conocer y disfrutar por 10 días y 9 noches",
-      "promocion": "",
+      "promocion": "false",
       "stock": "10"
     },
     {
@@ -262,7 +262,7 @@
         "https://images.pexels.com/photos/7245255/pexels-photo-7245255.jpeg"
       ],
       "slogan": "Un recorrido por Venecia y Roma memorable por 10 días y 9 noches",
-      "promocion": "1",
+      "promocion": "true",
       "stock": "12"
     },
     {
@@ -313,7 +313,7 @@
         "https://images.pexels.com/photos/6479141/pexels-photo-6479141.jpeg"
       ],
       "slogan": "Viví una experiencia única por las calles de París por 5 días y 4 noches",
-      "promocion": "",
+      "promocion": "false",
       "stock": "7"
     }
   ]

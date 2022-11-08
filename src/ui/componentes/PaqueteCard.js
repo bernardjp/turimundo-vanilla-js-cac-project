@@ -24,7 +24,7 @@ class PaqueteCard {
     const [precioEntero, precioDecimal] = formatearMoneda.format(this.precio).split('.');
 
     cardContenedor.innerHTML = `
-      ${Boolean(this.promocion) ? '<div class="card-sale">En oferta!</div>' : ''}
+      ${this.promocion === "true" ? '<div class="card-sale">En oferta!</div>' : ''}
       <div class="card-img-container">
         <img class="card-img" src="${this.imageURL}" alt="imagen de ${this.destino.pais}">
       </div>
