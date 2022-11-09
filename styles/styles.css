@@ -167,9 +167,12 @@ body {
 }
 
 .main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   max-width: var(--container-max-width);
+  padding: 2rem 0 6rem 0;
   width: 90%;
-  padding: 2rem 0 4rem 0;
 }
 
 
@@ -179,7 +182,7 @@ body {
   border-radius: 12px;
   border: 2px dashed lightgray;
   color: gray;
-  display: flex;
+  display: none;
   font-size: 1.5rem;
   font-weight: bold;
   height: 250px;
@@ -332,22 +335,9 @@ body {
   width: 100%;
 }
 
-.home-info-location {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-}
-.home-info-location .packages-info {
-  width: 49%;
-}
-.home-info-location figure {
-  margin: 0;
-  width: 49%;
-  border-radius: 8px;
-  border: 1px solid lightgray;
-}
-.home-info-location iframe {
-  border-radius: 8px;
+.home-info-iframe {
+  min-height: 240px;
+  margin: 1rem 0;
 }
 
 .home-title {
@@ -480,17 +470,29 @@ blockquote cite {
 .footer-container {
   align-items: center;
   display: flex;
+  gap: 0.5rem;
   justify-content: space-between;
-  margin: 0 1rem;
+  margin: 1rem;
   max-width: var(--container-max-width);
   width: 90%;
 }
-.footer-container span {
-  font-size: 1.5rem;
+
+.logo span {
+  font-size: 2rem;
+  margin: 0;
 }
 
-.logo h1 {
-  margin: 0;
+.footer-text {
+  font-size: 0.8rem;
+  font-weight: lighter;
+  margin-top: 0.3rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+.footer-text a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .footer-navbar {
@@ -991,6 +993,7 @@ blockquote cite {
   display: grid;
   gap: 1rem;
   grid-template-columns: auto 370px;
+  width: 100%;
 }
 
 .cart-list {
@@ -1190,10 +1193,8 @@ blockquote cite {
 .main-container-travel {
   position:relative;
   max-width: 900px;
-  width: 100%;
+  width: 90%;
   border-radius: 6px;
-  padding: 2rem 0 4rem 0;
-  margin: 0 5px 10px;
 }
 
 .main-container-travel form{
@@ -1368,6 +1369,11 @@ input[type=radio] {
 }
 
 @media (max-width: 780px) {
+  /* ---- FOOTER ---- */
+  .logo span {
+    font-size: 1.5rem;
+  }
+
   /* ---- PÄQUETES ---- */
   .card-grid-container {
     gap: 2%;
@@ -1517,6 +1523,10 @@ input[type=radio] {
     gap: 1rem;
   }
 
+  .home-title {
+    text-align: center;
+  }
+
   /* -- SLIDER -- */
   .slide-overlay {
     left: 25%;
@@ -1561,6 +1571,15 @@ input[type=radio] {
 }
 
 @media (max-width: 540px) {
+  /* ---- FOOTER ---- */
+  .footer-root {
+    height: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
   /* ---- HOME ---- */
   .home-info-section {
     gap: 0;
@@ -1571,6 +1590,10 @@ input[type=radio] {
     margin: 0 0 1rem 0;
   }
   
+  .home-info-iframe {
+    margin: 0;
+  }
+
   .home-quote-section p {
     font-size: 1.2rem;
   }
@@ -1636,7 +1659,7 @@ input[type=radio] {
     width: 100%;
   }
 
-  .header-root .logo h1 {
+  .header-root .logo span {
     display: none;
   }
   .header-logo {
