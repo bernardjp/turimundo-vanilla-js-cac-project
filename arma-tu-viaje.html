@@ -39,155 +39,158 @@
     </div>
   </header>
   <main class="main-root">
-    <div class="main-container-travel">
-
-      <form id="form" data-type="viaje" action="https://formspree.io/f/mjvzeqvy" method="POST">
-        <h2>Arma tu Viaje de tus sueños!</h2>
-
-        <div class="titulo">Datos del solicitante</div>
-        <div class="fields">
-          <div class="input-field">
-            <label>Nombre completo</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" maxlength="255">
+    <div class="main-container">
+      <section class="main-container-travel">
+        <form id="form" data-type="viaje" action="https://formspree.io/f/mjvzeqvy" method="POST">
+          <h2>Arma el viaje de tus sueños!</h2>
+  
+          <div class="titulo">Datos del solicitante</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Nombre completo</label>
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" maxlength="255">
+            </div>  
+            <div class="input-field">
+              <label>Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" maxlength="255">
+            </div>
+            <div class="input-field">
+              <label>Teléfono</label>
+              <input type="number" name="telefono" id="telefono" placeholder="Teléfono">
+            </div>
           </div>  
-          <div class="input-field">
-            <label>Email</label>
-            <input type="email" name="email" id="email" placeholder="Email" maxlength="255">
+          
+          <div class="titulo">Personas que viajan</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Adultos</label>
+              <select name="adultos" class="opciones">
+                <option selected value="0">Cantidad de adultos</option>
+                <option value="1">1 Adulto</option>
+                <option value="2">2 Adultos</option>
+                <option value="3">3 Adultos</option>
+                <option value="4">4 Adultos</option>
+                <option value="5">5 Adultos</option>
+                <option value="6">6 Adultos</option>
+                <option value="7">7 Adultos</option>
+                <option value="8">8 Adultos</option>
+                <option value="9">9 Adultos</option>
+                <option value="10">10 Adultos</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Menores</label>
+              <select name="menores" class="opciones">
+                <option selected value="0">Cantidad de menores</option>
+                <option value="1">1 Menor</option>
+                <option value="2">2 Menores</option>
+                <option value="3">3 Menores</option>
+                <option value="4">4 Menores</option>
+                <option value="5">5 Menores</option>
+                <option value="6">6 Menores</option>
+                <option value="7">7 Menores</option>
+                <option value="8">8 Menores</option>
+                <option value="9">9 Menores</option>
+                <option value="10">10 Menores</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Bebes</label>
+              <select name="bebes" class="opciones">
+                <option selected value="0">Cantidad de bebes</option>
+                <option value="1">1 Bebe</option>
+                <option value="2">2 Bebes</option>
+                <option value="3">3 Bebes</option>
+                <option value="4">4 Bebes</option>
+                <option value="5">5 Bebes</option>
+                <option value="6">6 Bebes</option>
+                <option value="7">7 Bebes</option>
+                <option value="8">8 Bebes</option>
+                <option value="9">9 Bebes</option>
+                <option value="10">10 Bebes</option>
+              </select>
+            </div>
           </div>
-          <div class="input-field">
-            <label>Teléfono</label>
-            <input type="number" name="telefono" id="telefono" placeholder="Teléfono">
+          
+          <div class="titulo">Destino</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Ciudad de destino</label>
+              <input type="text" name="lugar" id="lugar" placeholder="Ciudad de destino" maxlength="255" >
+            </div>
+            <div class="input-field">
+              <label>Fecha de partida</label>
+              <input type="date" name="fecha_de_partida" id="fecha de partida">
+            </div>
+            <div class="input-field">
+              <label>Fecha de regreso</label>
+              <input type="date" name="fecha_de_regreso" id="fecha de regreso">
+            </div>
+          </div>  
+  
+          <div class="titulo">Hotel</div>
+          <div class="fields">
+            <div class="input-field">
+              <div>¿Incluir hotel?</div>
+              <label for="hotel">
+                <input type="radio" name="hotel" value="Si">
+                Si
+              </label>
+              <label for="hotel">
+                <input type="radio" name="hotel" value="No">
+                No
+              </label>
+            </div>
+            <div class="input-field">
+              <label>Categoría</label>
+              <select name="categoria" id="categoria">
+                <option selected value="">No indicado</option>
+                <option value="1">1 Estrella</option>
+                <option value="2">2 Estrellas</option>
+                <option value="3">3 Estrellas</option>
+                <option value="4">4 Estrellas</option>
+                <option value="5">5 Estrellas</option>
+              </select>
+            </div>
           </div>
-        </div>  
-        
-        <div class="titulo">Personas que viajan</div>
-        <div class="fields">
-          <div class="input-field">
-            <label>Adultos</label>
-            <select name="adultos" class="opciones">
-              <option selected value="0">Cantidad de adultos</option>
-              <option value="1">1 Adulto</option>
-              <option value="2">2 Adultos</option>
-              <option value="3">3 Adultos</option>
-              <option value="4">4 Adultos</option>
-              <option value="5">5 Adultos</option>
-              <option value="6">6 Adultos</option>
-              <option value="7">7 Adultos</option>
-              <option value="8">8 Adultos</option>
-              <option value="9">9 Adultos</option>
-              <option value="10">10 Adultos</option>
-            </select>
+  
+          <div class="titulo">Tipo de Paquete</div>
+          <div class="fields">
+            <div class="input-field">
+              <label>Tipo de Paquete</label>
+              <select name="paquete" id="paquete">
+                <option selected value="">No indicado</option>
+                <option value="1">Aéreo</option>
+                <option value="2">Terrestre</option>
+                <option value="3">Aéreo + Terrestre</option>
+              </select>
+            </div>
+            <div class="input-field">
+              <label>Comidas especiales</label>
+              <input type="text" name="comidas" id="comidas" placeholder="Comidas especiales" maxlength="510">
+            </div>
+            <div class="input-field">
+              <label>Presupuesto por persona</label>
+              <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto" min="1" max="100000000">
+            </div>
           </div>
-          <div class="input-field">
-            <label>Menores</label>
-            <select name="menores" class="opciones">
-              <option selected value="0">Cantidad de menores</option>
-              <option value="1">1 Menor</option>
-              <option value="2">2 Menores</option>
-              <option value="3">3 Menores</option>
-              <option value="4">4 Menores</option>
-              <option value="5">5 Menores</option>
-              <option value="6">6 Menores</option>
-              <option value="7">7 Menores</option>
-              <option value="8">8 Menores</option>
-              <option value="9">9 Menores</option>
-              <option value="10">10 Menores</option>
-            </select>
+  
+          <div class="input-submit">
+            <input type="submit" value="Enviar" id="submit-boton">
           </div>
-          <div class="input-field">
-            <label>Bebes</label>
-            <select name="bebes" class="opciones">
-              <option selected value="0">Cantidad de bebes</option>
-              <option value="1">1 Bebe</option>
-              <option value="2">2 Bebes</option>
-              <option value="3">3 Bebes</option>
-              <option value="4">4 Bebes</option>
-              <option value="5">5 Bebes</option>
-              <option value="6">6 Bebes</option>
-              <option value="7">7 Bebes</option>
-              <option value="8">8 Bebes</option>
-              <option value="9">9 Bebes</option>
-              <option value="10">10 Bebes</option>
-            </select>
-          </div>
-        </div>
-        
-        <div class="titulo">Destino</div>
-        <div class="fields">
-          <div class="input-field">
-            <label>Ciudad de destino</label>
-            <input type="text" name="lugar" id="lugar" placeholder="Ciudad de destino" maxlength="255" >
-          </div>
-          <div class="input-field">
-            <label>Fecha de partida</label>
-            <input type="date" name="fecha_de_partida" id="fecha de partida">
-          </div>
-          <div class="input-field">
-            <label>Fecha de regreso</label>
-            <input type="date" name="fecha_de_regreso" id="fecha de regreso">
-          </div>
-        </div>  
-
-        <div class="titulo">Hotel</div>
-        <div class="fields">
-          <div class="input-field">
-            <div>¿Incluir hotel?</div>
-            <label for="hotel">
-              <input type="radio" name="hotel" value="Si">
-              Si
-            </label>
-            <label for="hotel">
-              <input type="radio" name="hotel" value="No">
-              No
-            </label>
-          </div>
-          <div class="input-field">
-            <label>Categoría</label>
-            <select name="categoria" id="categoria">
-              <option selected value="">No indicado</option>
-              <option value="1">1 Estrella</option>
-              <option value="2">2 Estrellas</option>
-              <option value="3">3 Estrellas</option>
-              <option value="4">4 Estrellas</option>
-              <option value="5">5 Estrellas</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="titulo">Tipo de Paquete</div>
-        <div class="fields">
-          <div class="input-field">
-            <label>Tipo de Paquete</label>
-            <select name="paquete" id="paquete">
-              <option selected value="">No indicado</option>
-              <option value="1">Aéreo</option>
-              <option value="2">Terrestre</option>
-              <option value="3">Aéreo + Terrestre</option>
-            </select>
-          </div>
-          <div class="input-field">
-            <label>Comidas especiales</label>
-            <input type="text" name="comidas" id="comidas" placeholder="Comidas especiales" maxlength="510">
-          </div>
-          <div class="input-field">
-            <label>Presupuesto por persona</label>
-            <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto" min="1" max="100000000">
-          </div>
-        </div>
-
-        <div class="input-submit">
-          <input type="submit" value="Enviar" id="submit-boton">
-        </div>
-      </form>
-      <div id="mensaje" class="form-list-message"></div>
+        </form>
+        <div id="mensaje" class="form-list-message"></div>
+      </section>
     </div>
-    
   </main>
   <footer class="footer-root">
     <div class="footer-container">
       <div class="logo">
-        <h1>TuriMundo</h1>
+        <span>TuriMundo</span>
       </div>
+      <span class="footer-text">
+        Este sitio fue creado con motivos educacionales, y es parte del curso <a href="https://www.buenosaires.gob.ar/educacion/codo-codo" target="_blank">Codo a Codo 4.0 2022</a>
+      </span>
       <nav class="footer-navbar">
         <a class="footer-btn" href="https://twitter.com/?lang=es" target="_blank"><i class="fa-brands fa-twitter"></i></a>
         <a class="footer-btn" href="https://es-la.facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
