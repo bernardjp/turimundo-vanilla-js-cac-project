@@ -51,6 +51,7 @@
       ],
       "slogan": "Una experiencia imperdible de 5 días y 4 noches en un paraíso terrenal",
       "promocion": "true",
+      "descuento": "750",
       "stock": "21"
     },
     {
@@ -104,6 +105,7 @@
       ],
       "slogan": "Viví las maravillas naturales de Canadá por 12 días y 11 noches",
       "promocion": "true",
+      "descuento": "1200",
       "stock": "14"
     },
     {
@@ -157,6 +159,7 @@
       ],
       "slogan": "Conocé las ruinas Incas y todos sus secretos por 8 días y 7 noches",
       "promocion": "true",
+      "descuento": "960",
       "stock": "9"
     },
     {
@@ -210,6 +213,7 @@
       ],
       "slogan": "Un destino exótico para conocer y disfrutar por 10 días y 9 noches",
       "promocion": "false",
+      "descuento": "0",
       "stock": "10"
     },
     {
@@ -263,6 +267,7 @@
       ],
       "slogan": "Un recorrido por Venecia y Roma memorable por 10 días y 9 noches",
       "promocion": "true",
+      "descuento": "450",
       "stock": "12"
     },
     {
@@ -314,6 +319,7 @@
       ],
       "slogan": "Viví una experiencia única por las calles de París por 5 días y 4 noches",
       "promocion": "false",
+      "descuento": "0",
       "stock": "7"
     }
   ]
