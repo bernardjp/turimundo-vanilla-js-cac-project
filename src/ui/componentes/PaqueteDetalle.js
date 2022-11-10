@@ -1,18 +1,20 @@
 class PaqueteDetalle {
   constructor(paqueteData, callbackHandler, modalHandler) {
-    this.id = paqueteData.id;
-    this.nombre = paqueteData.nombre;
-    this.servicios = paqueteData.servicios;
+    this.callbackHandler = callbackHandler;
     this.descripcion = paqueteData.descripcion;
+    this.descuento = paqueteData.descuento;
     this.destino = paqueteData.destino;
-    this.precio = paqueteData.precio;
-    this.ubicacion = paqueteData.ubicacion;
     this.duracion = paqueteData.duracion;
     this.fecha = paqueteData.fecha;
-    this.review = paqueteData.review;
+    this.id = paqueteData.id;
     this.imagenes = paqueteData.imagenes;
-    this.callbackHandler = callbackHandler;
     this.modalHandler = modalHandler;
+    this.nombre = paqueteData.nombre;
+    this.promocion = paqueteData.promocion;
+    this.precio = paqueteData.precio;
+    this.review = paqueteData.review;
+    this.servicios = paqueteData.servicios;
+    this.ubicacion = paqueteData.ubicacion;
   }
 
   crearElemento() {
@@ -23,6 +25,11 @@ class PaqueteDetalle {
     const banner = this.#crearBanner();
     const informacion = this.#crearSeccionInformacion();
     const navegacion = this.#crearNavegacion();
+    
+    if (this.promocion === "true") {
+      const flagDescuento = this.#crearFlagDescuento();
+      detallesContenedor.appendChild(flagDescuento);
+    }
 
     detallesContenedor.appendChild(banner);
     detallesContenedor.appendChild(informacion);
@@ -33,6 +40,16 @@ class PaqueteDetalle {
     this.#agregarModalHandler(detallesContenedor);
 
     return detallesContenedor;
+  }
+
+  #crearFlagDescuento() {
+    const porcentajeDescuento = parseInt(this.descuento) / parseInt(this.precio) * 100;
+    
+    const flagContenedor = document.createElement("div");
+    flagContenedor.className = "pack-details-sale";
+    flagContenedor.innerHTML = `${porcentajeDescuento}% de Descuento!`;
+
+    return flagContenedor;
   }
 
   #crearBanner() {
@@ -241,8 +258,12 @@ class PaqueteDetalle {
     });
 
     const precio = formatearMoneda.format(this.precio);
+    const descuentoPromocion = formatearMoneda.format(this.descuento);
     const descuentoPasajeroFrecuente = formatearMoneda.format(500);
     const precioGastosTasas = formatearMoneda.format(Math.ceil(this.precio * 0.25));
+    const precioTotal = formatearMoneda.format(
+      parseInt(this.precio) - parseInt(this.descuento) + Math.ceil(this.precio * 0.25)
+    );
 
     tablaPreciosContenedor.innerHTML = `
       <details class="pack-details" open>
@@ -252,19 +273,31 @@ class PaqueteDetalle {
             <tbody>
               <tr class="price-table-row">
                 <td>Precio</td>
-                <td>${precio} + IVA</td>
+                <td>${precio}</td>
               </tr>
+              ${
+                this.promocion === "true"
+                && `<tr class="price-table-row">
+                    <td>Descuento de promoción</td>
+                    <td>${descuentoPromocion}</td>
+                  </tr>`
+              }
               <tr class="price-table-row">
-                <td>Descuento "Pasajeros Frecuentes"</td>
+                <td>Descuento "Viajeros Frecuentes" <span class="small-note">(1)</span></td>
                 <td>${descuentoPasajeroFrecuente}</td>
               </tr>
               <tr class="price-table-row">
-                <td>DNT, Tasas(1) y Gastos Administrativos</td>
+                <td>DNT, Tasas <span class="small-note">(2)</span> y Gastos Administrativos</td>
                 <td>${precioGastosTasas}</td>
+              </tr>
+              <tr class="price-table-row">
+                <td>TOTAL</td>
+                <td><strong>${precioTotal}<strong></td>
               </tr>
             </tbody>
           </table>
-          <span class="small-note">(1) Impuestos sujetos a modificaciones de las compañías aéreas</span>
+          <p class="small-note">(1) Descuento aplicable solo bajo cumplimiento de requisitos de plan "Viajero Frecuente".</p>
+          <p class="small-note">(2) Impuestos sujetos a modificaciones de las compañías aéreas.</p>
         </div>
       </details>
     `;

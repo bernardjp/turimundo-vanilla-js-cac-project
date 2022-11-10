@@ -524,6 +524,7 @@ blockquote cite {
 #pack-details-container {
   border: 1px solid #cecece;
   border-radius: 24px;
+  position: relative;
 }
 
 .pack-list-section {
@@ -541,6 +542,25 @@ blockquote cite {
   gap: 2rem;
   justify-content: center;
   padding: 4rem 1rem 2.5rem 1rem;
+}
+
+.pack-details-sale {
+  align-items: center;
+  background-color: var(--color-cuaternary);
+  border-end-end-radius: 8px;
+  border-end-start-radius: 8px;
+  border: none;
+  box-shadow: 0 3px 5px rgba(50, 50, 50, 0.5);
+  color: white;
+  display: flex;
+  font-size: 1.2rem;
+  font-weight: bold;
+  justify-content: center;
+  left: 35px;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: -8px;
+  z-index: 3;
 }
 
 .pack-btn {
@@ -760,10 +780,12 @@ blockquote cite {
 }
 
 .pack-image {
+  border-radius: inherit;
   height: 100%;
   width: 100%;
 }
 .pack-image.placeholder {
+  border-radius: inherit;
   height: auto;
   width: 70%;
 }
@@ -1401,6 +1423,10 @@ input[type=radio] {
   }
 
   /* -- PAQUETE - DESCRIPCION -- */
+  .pack-banner-overlay h3 {
+    font-size: 2rem;
+  }
+
   .pack-description {
     flex-direction: column;
   }
