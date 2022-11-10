@@ -268,36 +268,42 @@ class PaqueteDetalle {
     tablaPreciosContenedor.innerHTML = `
       <details class="pack-details" open>
         <summary class="pack-details-summary">${titulo}</summary>
-        <div class="pack-details-content">
-          <table class="pack-price-table">
-            <tbody>
-              <tr class="price-table-row">
-                <td>Precio</td>
-                <td>${precio}</td>
-              </tr>
-              ${
-                this.promocion === "true"
-                && `<tr class="price-table-row">
-                    <td>Descuento de promoción</td>
-                    <td>${descuentoPromocion}</td>
-                  </tr>`
-              }
-              <tr class="price-table-row">
-                <td>Descuento "Viajeros Frecuentes" <span class="small-note">(1)</span></td>
-                <td>${descuentoPasajeroFrecuente}</td>
-              </tr>
-              <tr class="price-table-row">
-                <td>DNT, Tasas <span class="small-note">(2)</span> y Gastos Administrativos</td>
-                <td>${precioGastosTasas}</td>
-              </tr>
-              <tr class="price-table-row">
-                <td>TOTAL</td>
-                <td><strong>${precioTotal}<strong></td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="small-note">(1) Descuento aplicable solo bajo cumplimiento de requisitos de plan "Viajero Frecuente".</p>
-          <p class="small-note">(2) Impuestos sujetos a modificaciones de las compañías aéreas.</p>
+        <div class="pack-details-content prices">
+          <div>
+            <table class="pack-price-table">
+              <tbody>
+                <tr class="price-table-row">
+                  <td>Precio</td>
+                  <td>${precio}</td>
+                </tr>
+                ${
+                  this.promocion === "true"
+                  ? `<tr class="price-table-row">
+                      <td>Descuento de promoción</td>
+                      <td>${descuentoPromocion}</td>
+                    </tr>`
+                  : ""
+                }
+                <tr class="price-table-row">
+                  <td>Descuento "Viajeros Frecuentes" <span class="small-note">(1)</span></td>
+                  <td>${descuentoPasajeroFrecuente}</td>
+                </tr>
+                <tr class="price-table-row">
+                  <td>DNT, Tasas <span class="small-note">(2)</span> y Gastos Administrativos</td>
+                  <td>${precioGastosTasas}</td>
+                </tr>
+                <tr class="price-table-row">
+                  <td>TOTAL</td>
+                  <td><strong>${precioTotal}<strong></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="small-note">(1) Descuento aplicable solo bajo cumplimiento de requisitos de plan "Viajero Frecuente".</p>
+            <p class="small-note">(2) Impuestos sujetos a modificaciones de las compañías aéreas.</p>
+          </div>
+          <div>
+            <img class="price-table-img" src="/assets/images/viajar_1.webp" alt="viajamos juntos"/>
+          </div>
         </div>
       </details>
     `;
