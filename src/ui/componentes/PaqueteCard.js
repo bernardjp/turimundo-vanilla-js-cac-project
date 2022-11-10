@@ -8,6 +8,7 @@ class PaqueteCard {
     this.review = paqueteData.review;
     this.precio = paqueteData.precio;
     this.promocion = paqueteData.promocion;
+    this.descuento = paqueteData.descuento;
   }
 
   crearElemento() {
@@ -17,11 +18,14 @@ class PaqueteCard {
     cardContenedor.id = `pack-${this.id}`;
     cardContenedor.className = 'card-container';
 
+    // console.log(this.descuento);
     const formatearMoneda = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD"
     });
-    const [precioEntero, precioDecimal] = formatearMoneda.format(this.precio).split('.');
+
+    const precioDescontado = parseInt(this.precio) - parseInt(this.descuento);
+    const [precioEntero, precioDecimal] = formatearMoneda.format(precioDescontado).split('.');
 
     cardContenedor.innerHTML = `
       ${this.promocion === "true" ? '<div class="card-sale">En oferta!</div>' : ''}
@@ -34,15 +38,18 @@ class PaqueteCard {
           <p class="card-destination">${this.destino.ciudad} | ${this.destino.pais} | ${this.destino.continente}</p>
           <p class="card-information">${this.duracion.dias} días | ${this.duracion.noches} noches</p>
           <p class="card-information">
-            ${
-              this.review.promedio > 4 
+            ${this.review.promedio > 4 
               ? '<i class="fa-solid fa-star"></i>'
               : '<i class="fa-solid fa-star-half-stroke"></i>'
             }${this.review.promedio} | ${this.review.cantidad} reviews</p>
         </div>
         <div class="card-price-container">
           <p style="font-size: 0.8rem; font-weight: 600;">Precio por persona en USD desde</p>
-          <span class="card-price">${precioEntero}</span><span style="font-weight:bold;">.${precioDecimal}</span>
+          <span class="card-price">${precioEntero}</span><b>.${precioDecimal}</b>
+          ${this.promocion === "true"
+            ? `<span class="card-price-discounted">$${this.precio}.00</span>`
+            : ""
+          }
           <p style="font-size: 0.8rem">No incluye impuestos, tasas y cargos</p>
         </div>
       </div>
