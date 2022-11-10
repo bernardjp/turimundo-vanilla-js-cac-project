@@ -1141,6 +1141,7 @@ blockquote cite {
   display: flex;
   margin-bottom: 1rem;
   max-height: 360px;
+  position: relative;
   transition: 0.2s;
   width: 100%;
 }
@@ -1193,15 +1194,54 @@ blockquote cite {
 }
 
 .cart-item-btn {
+  align-items: center;
   background-color: var(--color-primary);
-  border-radius: 6px;
+  border-radius: 24px;
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 0.9rem;
-  font-weight: bold;
-  padding: 0.5rem;
+  display: flex;
+  font-size: 1.3rem;
+  height: 48px;
+  justify-content: center;
+  position: relative;
   text-decoration: none;
+  width: 48px;
+}
+
+.tooltip {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  font-size: 1rem;
+  height: 28px;
+  opacity: 0;
+  padding: 0 0.8rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: -36px;
+  transition: opacity .5s;
+  visibility: hidden;
+  width: max-content;
+  z-index: 10;
+}
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 78%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-primary) transparent transparent transparent;
+}
+
+.cart-item-btn:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 /* ---- PÁGINA DE CONTACTO ---- */

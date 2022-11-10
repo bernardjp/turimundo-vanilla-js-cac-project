@@ -6,7 +6,7 @@ function filtrarItems(listado, param, valor) {
 }
 
 function mapearArticulosConCosto(dataArticulos) {
-  return dataArticulos.map(({ nombre, precio, cantidad }) => ({ nombre, precio, cantidad }));
+  return dataArticulos.map(({ nombre, precio, descuento, cantidad }) => ({ nombre, precio, descuento, cantidad }));
 }
 
 function mapearArticulosConCantidad(listadoArticulos, dataArticulos) {
