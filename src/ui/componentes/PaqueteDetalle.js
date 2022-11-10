@@ -181,8 +181,6 @@ class PaqueteDetalle {
           <div class="image-container">
             <img
               class="pack-image"
-              width="100%"
-              height="100%"
               src=${imagen}
               alt="imagen-${this.destino.ciudad}-${i + 1}">
           </div>
@@ -295,7 +293,7 @@ class PaqueteDetalle {
           </p>
           <p>
             <strong>(*) Descuentos para pasajeros frecuentes:</strong>
-            <span>Pasajeros frecuentes son considerados aquellos que hayan realizado un viaje grupal o más con TuriMundo.</span>
+            <span>Pasajeros frecuentes son considerados aquellos que hayan realizado un viaje grupal o más con turimundo.</span>
           </p>
           <p>
             <strong>Pasajeros del Interior del país:</strong>
@@ -332,7 +330,10 @@ class PaqueteDetalle {
     const elementosImagen = elementoContenedor.getElementsByTagName("img");
 
     for(const img of elementosImagen) {
-      img.addEventListener("error", () => img.src = "/Multimedia/favicon_globo.png");
+      img.addEventListener("error", () => {
+        img.src = "/assets/turimundo_logo_w.webp";
+        img.classList.add("placeholder");
+      });
     }
   }
 

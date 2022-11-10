@@ -48,7 +48,20 @@ class PaqueteCard {
       </div>
     `;
 
+    this.#agregarImagenPlaceholder(cardContenedor);
+
     return cardContenedor;
+  }
+
+  #agregarImagenPlaceholder(elementoContenedor) {
+    const elementosImagen = elementoContenedor.getElementsByTagName("img");
+
+    for(const img of elementosImagen) {
+      img.addEventListener("error", () => {
+        img.src = "/assets/turimundo_logo_w.webp";
+        img.classList.add("placeholder");
+      });
+    }
   }
 }
 
