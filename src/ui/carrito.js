@@ -17,7 +17,7 @@ function actualizarCarrito(data) {
 
   if (articulosEnCarrito === null) {
     renderizarMensaje("No hay artículos en el Carrito.");
-    renderizarDetalleCheckout([], { costo: 0, impuestos: 0 });
+    renderizarDetalleCheckout([], { costo: 0, descuento: 0, impuestos: 0 });
     botonCajaHandler("Carrito vacío", "Prueba agregando algún paquete.", "error");
     return;
   }
@@ -25,7 +25,7 @@ function actualizarCarrito(data) {
   const dataArticulosEnCarrito = mapearArticulosConCantidad(articulosEnCarrito, paquetes);
   const articulosConCosto = mapearArticulosConCosto(dataArticulosEnCarrito);
   const costoTotal = calcularCosto(articulosConCosto);
-  
+
   renderizarArticulosCarrito(dataArticulosEnCarrito);
   renderizarDetalleCheckout(articulosConCosto, costoTotal);
   botonCajaHandler("Gracias por su compra!", "Les deseamos una hermosa experiencia.", "success");
@@ -35,7 +35,7 @@ function renderizarArticulosCarrito(dataArticulos) {
   const listadoContenedor = document.getElementById("cart-list");
 
   const eliminarArticuloCallBack = (e) => {
-    const itemID = e.target.dataset.id;
+    const itemID = e.currentTarget.dataset.id;
     eliminarItemLocalStorage(itemID);
     window.location.reload();
   }
@@ -49,7 +49,7 @@ function renderizarArticulosCarrito(dataArticulos) {
 };
 
 function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
-  const { costo, impuestos } = costoTotal;
+  const { costo, descuento, impuestos } = costoTotal;
   const formatearMoneda = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD"
@@ -57,6 +57,7 @@ function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
 
   const listadoArticulos = document.getElementById("articulos-listado");
   const subtotalElemento = document.getElementById("costo-subtotal");
+  const descuentoElemento = document.getElementById("costo-descuento");
   const impuestosElemento = document.getElementById("costo-impuestos");
   const totalElemento = document.getElementById("costo-total");
   
@@ -65,7 +66,7 @@ function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
     articuloElemento.className = "cart-sidebar-pack-item";
   
     articuloElemento.innerHTML = `
-      <span>${articulo.nombre}</span>
+      <span style="max-width: 60%;">${articulo.nombre}</span>
       <span>${articulo.cantidad} x ${formatearMoneda.format(articulo.precio)}</span>
     `;
 
@@ -73,8 +74,9 @@ function renderizarDetalleCheckout(articulosConCosto, costoTotal) {
   })
 
   subtotalElemento.textContent = formatearMoneda.format(costo);
+  descuentoElemento.textContent = formatearMoneda.format(descuento);
   impuestosElemento.textContent = formatearMoneda.format(impuestos);
-  totalElemento.textContent = formatearMoneda.format(costo + impuestos);
+  totalElemento.textContent = formatearMoneda.format(costo + impuestos - descuento);
 };
 
 function eliminarArticulosCarrito() {
