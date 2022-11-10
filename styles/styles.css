@@ -695,6 +695,11 @@ blockquote cite {
 .pack-details-content {
   padding: 1rem 2rem;
 }
+.pack-details-content.prices {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 2%;
+}
 
 .pack-details-wrapper.small-note {
   font-size: 0.9rem;
@@ -794,7 +799,6 @@ blockquote cite {
 /* -- PRICE TABLE -- */
 .pack-price-table {
   margin-bottom: 1rem;
-  max-width: 50%;
   width: 100%;
 }
 
@@ -803,7 +807,7 @@ blockquote cite {
 }
 
 .price-table-row td {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid var(--color-tertiary);
 }
 .price-table-row td:nth-child(1) {
   font-weight: bold;
@@ -811,6 +815,11 @@ blockquote cite {
 .price-table-row td:nth-child(2) {
   font-size: 1.05rem;
   text-align: end;
+}
+
+.price-table-img {
+  max-width: 100%;
+  border-radius: 8px;
 }
 
 /* -- MODAL -- */
@@ -1445,6 +1454,10 @@ input[type=radio] {
     width: auto;
   }
 
+  .pack-details-content.prices {
+    grid-template-columns: 100%;
+  }
+
   /* ---- PAQUETES - FILTRO ---- */
   .filter-form {
     grid-template-columns: 1fr 1fr;
@@ -1680,7 +1693,7 @@ input[type=radio] {
     grid-template-columns: 100%;
   }
 
-  .pack-details-content {
+  .pack-details-content.prices {
     padding: 1rem 1.5rem;
   }
 
