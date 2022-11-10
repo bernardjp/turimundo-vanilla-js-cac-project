@@ -113,8 +113,7 @@ body {
 }
 
 .header-logo{
-  max-width: 70%;
-  height: 70px;
+  height: 60px;
 }
 
 .header-cart-btn img {
@@ -601,7 +600,7 @@ blockquote cite {
 /* ---- PAQUETE - SECCION de DETALLES ---- */
 /* -- BANNER -- */
 .pack-banner-container {
-  background-color: gray;
+  background-color: var(--color-primary);
   border-start-end-radius: 24px;
   border-start-start-radius: 24px;
   display: flex;
@@ -747,19 +746,28 @@ blockquote cite {
 }
 
 .image-container {
+  align-items: center;
+  background-color: var(--color-primary);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
   transition: 0.2s;
 }
 .image-container:hover {
   filter: brightness(1.1) saturate(0.85);
   box-shadow: 0 0 10px rgba(0,0,0,.3);
+  cursor: pointer;
 }
 
 .pack-image {
-  background-color: var(--color-secondary);
-  border-radius: 4px;
   height: 100%;
   width: 100%;
 }
+.pack-image.placeholder {
+  height: auto;
+  width: 70%;
+}
+
 
 /* -- PRICE TABLE -- */
 .pack-price-table {
@@ -925,6 +933,11 @@ blockquote cite {
 .card-img {
   position: absolute;
   height: 100%;
+}
+.card-img.placeholder {
+  height: auto;
+  top: 25%;
+  width: 80%;
 }
 
 .card-info-container {
