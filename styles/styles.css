@@ -982,6 +982,13 @@ blockquote cite {
   font-size: 1.3rem;
   font-weight: bolder;
 }
+.card-price-discounted {
+  color: var(--color-cuaternary);
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-left: 0.5rem;
+  text-decoration: line-through;
+}
 
 .card-sale {
   align-items: center;
