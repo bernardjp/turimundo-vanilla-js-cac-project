@@ -25,17 +25,27 @@ function renderizarDetallesPaquete(dataPaquete) {
     e.preventDefault();
 
     const cantidad = document.getElementById("cantidad-pasajes").value;
-    const id = document.getElementById("pack-details-container").dataset.id;
-    const paquete = { id, cantidad: parseInt(cantidad) };
 
-    agregarALocalStorage(paquete);
-    actualizarContadorCarrito();
+    if (cantidad) {
+      const id = document.getElementById("pack-details-container").dataset.id;
+      const paquete = { id, cantidad: parseInt(cantidad) };
+  
+      agregarALocalStorage(paquete);
+      actualizarContadorCarrito();
+  
+      Swal.fire({
+        title: "Agregado al carrito",
+        text: `${dataPaquete.nombre} se ha agregado al carrito de compras.`,
+        icon: "success"
+      });
 
-    Swal.fire({
-      title: "Agregado al carrito",
-      text: `${dataPaquete.nombre} se ha agregado al carrito de compras.`,
-      icon: "success"
-    });
+    } else {
+      Swal.fire({
+        title: "",
+        text: "Prueba seleccionando cuantos pasajes deseas y luego agrégalos al carrito",
+        icon: "error"
+      });
+    }
   }
 
   const detallesPaqueteMapeado = new PaqueteDetalle(dataPaquete, agregarACarritoCB, modalHandler);

@@ -1,4 +1,3 @@
-
 class SlideCarrusel {
   constructor(slideData) {
     this.destino = slideData.destino;
