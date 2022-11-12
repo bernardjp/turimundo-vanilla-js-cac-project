@@ -4,7 +4,7 @@ class SlideCarrusel {
     this.destino = slideData.destino;
     this.fecha = slideData.fecha;
     this.id = slideData.id;
-    this.imageURL = slideData.imagenes;
+    this.imageURL = slideData.imagenes[0];
     this.slogan = slideData.slogan;
   }
 
@@ -21,7 +21,7 @@ class SlideCarrusel {
         <p>${this.slogan}</p>
         <a href="promociones.html?id=${this.id}" class="slide-btn-details" target="_blank">VER DETALLES</a>
       </div>
-      <img class="slide-image" src="assets/images/${this.id}.webp" alt="${this.destino.pais}-picture">  
+      <img class="slide-image" src="${this.imageURL}" alt="${this.destino.pais}-picture">  
     `;
 
     return elementoContenedor;
