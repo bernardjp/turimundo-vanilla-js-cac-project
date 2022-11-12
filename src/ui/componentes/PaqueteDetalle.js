@@ -105,7 +105,7 @@ class PaqueteDetalle {
 
     descripcionContenedor.innerHTML = `
       <details class="pack-details" open>
-        <summary class="pack-details-summary">${titulo}</summary>
+        <summary class="pack-details-summary"><h2>${titulo}</h2></summary>
         <div class="pack-details-content pack-description">
           <div class="pack-description-text">
             <div>
@@ -128,11 +128,12 @@ class PaqueteDetalle {
                 <span>
                 ${
                   this.review.promedio > 4 
-                  ? '<i class="fa-solid fa-star"></i>'
-                  : '<i class="fa-solid fa-star-half-stroke"></i>'
+                  ? '<i id="review-star" class="fa-solid fa-star"></i>'
+                  : '<i id="review-star" class="fa-solid fa-star-half-stroke"></i>'
                 }${this.review.promedio} / 5.00 | ${this.review.cantidad} reseñas</span>
               </p>
               <p class="small-note">*Este paquete se encontrará a la venta una semana antes de la fecha de partida.</p>
+              <p class="small-note">*Para compras mayores a 9 pasajes contáctese directamente con nuestras <a href="contacto.html" style="text-decoration: none; color: tomato; font-weight: bold;">oficinas.</a></p>
             </div>
             ${formularioCompra.outerHTML}
           </div>
@@ -149,22 +150,43 @@ class PaqueteDetalle {
     formularioCompra.action = "post";
     formularioCompra.className = "pack-details-form";
 
-    const agregarCarritoInput = document.createElement("input");
+    const agregarCarritoInput = document.createElement("button");
     agregarCarritoInput.id = "btn-agregar-carrito";
     agregarCarritoInput.classList.add("pack-btn", "primary", "cart-btn");
     agregarCarritoInput.type = "submit";
-    agregarCarritoInput.value = "Agregar al Carrito";
+    agregarCarritoInput.innerHTML = `
+      <div class="pack-btn-icon">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <span>carrito</span>
+    `;
 
     formularioCompra.innerHTML = `
-      <div>
-        <label for="cantidad-pasajes">
-          <strong>Cantidad de paquetes:</strong>     
+      <h3>Realiza tu compra!</h3>
+      <div class="input-container">
+        <label class="filter-label" for="cantidad-pasajes">
+          Cantidad de Paquetes
+          <select class="filter-select" name="cantidad-pasajes" id="cantidad-pasajes">
+            <option value="" selected>Selecciona una opción</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 personas</option>
+            <option value="7">7 personas</option>
+            <option value="8">8 personas</option>
+            <option value="9">9 personas</option>
+          </select>
         </label>
-        <input type="number" name="cantidad-pasajes" id="cantidad-pasajes" min="1" max="10" placeholder="0" value="1">
+        <button id="btn-agregar-carrito" class="pack-cart-btn" type="submit">
+          <div class="pack-btn-icon">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <span>carrito</span>
+        </button>
       </div>
     `;
-    
-    formularioCompra.appendChild(agregarCarritoInput);
 
     return formularioCompra;
   }
@@ -208,7 +230,7 @@ class PaqueteDetalle {
     listadoImagenesContenedor.innerHTML = `
       <div class="pack-details-wrapper">
         <details class="pack-details" open>
-          <summary class="pack-details-summary">${titulo}</summary>
+          <summary class="pack-details-summary"><h2>${titulo}</h2></summary>
           <div class="pack-details-content pack-images-container">
             ${listadoImagenes}
           </div>
@@ -237,7 +259,7 @@ class PaqueteDetalle {
 
     itinerarioContenedor.innerHTML = `
       <details class="pack-details" open>
-        <summary class="pack-details-summary">${titulo}</summary>
+        <summary class="pack-details-summary"><h2>${titulo}</h2></summary>
         <div class="pack-details-content">
           ${listadoItinerario}
         </div>
@@ -267,7 +289,7 @@ class PaqueteDetalle {
 
     tablaPreciosContenedor.innerHTML = `
       <details class="pack-details" open>
-        <summary class="pack-details-summary">${titulo}</summary>
+        <summary class="pack-details-summary"><h2>${titulo}</h2></summary>
         <div class="pack-details-content prices">
           <div>
             <table class="pack-price-table">
@@ -319,7 +341,7 @@ class PaqueteDetalle {
 
     disclaimerContenedor.innerHTML = `
       <details class="pack-details">
-        <summary class="pack-details-summary">${titulo}</summary>
+        <summary class="pack-details-summary"><h2>${titulo}</h2></summary>
         <div class="pack-details-content">
           <p>
             <strong>*Precios sujetos a la aplicación del impuesto PAÍS del 30% según Ley de Solidaridad Social 27.541 Res. 4659/2020 y a la Percepción del 35% de AFIP Res. 4815. En caso de realizar el pago en DÓLARES estos dos impuestos no deberán abonarse.</strong>
@@ -377,7 +399,7 @@ class PaqueteDetalle {
   }
 
   #agregarCallbackHandler(elementoContenedor) {
-    const botonesCarrito = elementoContenedor.getElementsByClassName("cart-btn");
+    const botonesCarrito = elementoContenedor.getElementsByClassName("pack-cart-btn");
 
     for(const btn of botonesCarrito) {
       btn.addEventListener("click", (e) => this.callbackHandler(e));
