@@ -416,22 +416,3 @@ class PaqueteDetalle {
 }
 
 export { PaqueteDetalle };
-
-
-{/*
-iframe de google API con la API key en el src
-Usar este iframe una vez que se creen las restricciones desde el Google Cloud Console
-(se necesita el nombre del domino para restringir el acceso desde otros sitios)
-
-  <iframe
-    width="600"
-    height="450"
-    style="border:0"
-    loading="lazy"
-    allowfullscreen
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Location in Google Maps"
-    src="https://www.google.com/maps/embed/v1/place?key=[API_KEY]&q=4°10′30″N,73°30′30″E">
-  </iframe>
-
-*/}
