@@ -53,7 +53,7 @@ class ArticuloCarrito {
           ${listadoServicios}
         </ul>
         <div class="cart-btn-container">
-          <a class="cart-item-btn"  href="promociones.html?id=${this.id}" target="_blank">
+          <a class="cart-item-btn"  href="paquete.html?id=${this.id}" target="_blank">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span class="tooltip">
               Ver Detalles

@@ -19,7 +19,7 @@ class SlideCarrusel {
         <p>${fecha}</p>
         <h3>Viajá a ${this.destino.ciudad}</h3>
         <p>${this.slogan}</p>
-        <a href="promociones.html?id=${this.id}" class="slide-btn-details" target="_blank">VER DETALLES</a>
+        <a href="paquete.html?id=${this.id}" class="slide-btn-details" target="_blank">VER DETALLES</a>
       </div>
       <img class="slide-image" src="${this.imageURL}" alt="${this.destino.pais}-picture">  
     `;

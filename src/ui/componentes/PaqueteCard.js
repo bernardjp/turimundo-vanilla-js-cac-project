@@ -13,12 +13,11 @@ class PaqueteCard {
 
   crearElemento() {
     const cardContenedor = document.createElement('a');
-    cardContenedor.href = `promociones.html?id=${this.id}`;
+    cardContenedor.href = `paquete.html?id=${this.id}`;
     cardContenedor.target = "_blank";
     cardContenedor.id = `pack-${this.id}`;
     cardContenedor.className = 'card-container';
 
-    // console.log(this.descuento);
     const formatearMoneda = new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD"
