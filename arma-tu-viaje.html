@@ -47,7 +47,7 @@
           <div class="fields">
             <div class="input-field">
               <label>Nombre completo</label>
-              <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" maxlength="255">
+              <input type="text" name="nombre" id="nombre" placeholder="Nombre y Apellido" maxlength="255" required>
             </div>  
             <div class="input-field">
               <label>Email</label>
@@ -63,7 +63,7 @@
           <div class="fields">
             <div class="input-field">
               <label>Adultos</label>
-              <select name="adultos" class="opciones">
+              <select name="adultos" class="opciones" required>
                 <option selected value="0">Cantidad de adultos</option>
                 <option value="1">1 Adulto</option>
                 <option value="2">2 Adultos</option>
@@ -115,7 +115,7 @@
           <div class="fields">
             <div class="input-field">
               <label>Ciudad de destino</label>
-              <input type="text" name="lugar" id="lugar" placeholder="Ciudad de destino" maxlength="255" >
+              <input type="text" name="lugar" id="lugar" placeholder="Ciudad de destino" maxlength="255" required>
             </div>
             <div class="input-field">
               <label>Fecha de partida</label>
@@ -142,7 +142,7 @@
             </div>
             <div class="input-field">
               <label>Categoría</label>
-              <select name="categoria" id="categoria">
+              <select name="categoria" id="categoria" required>
                 <option selected value="">No indicado</option>
                 <option value="1">1 Estrella</option>
                 <option value="2">2 Estrellas</option>
@@ -157,7 +157,7 @@
           <div class="fields">
             <div class="input-field">
               <label>Tipo de Paquete</label>
-              <select name="paquete" id="paquete">
+              <select name="paquete" id="paquete" required>
                 <option selected value="">No indicado</option>
                 <option value="1">Aéreo</option>
                 <option value="2">Terrestre</option>
@@ -170,7 +170,7 @@
             </div>
             <div class="input-field">
               <label>Presupuesto por persona</label>
-              <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto" min="1" max="100000000">
+              <input type="number" name="presupuesto" id="presupuesto" placeholder="$ Presupuesto" min="1" max="100000000" required>
             </div>
           </div>
   
