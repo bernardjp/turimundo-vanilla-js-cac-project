@@ -42,6 +42,8 @@ li {
   font-weight: bold;
   height: var(--header-height);
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .header-container {
@@ -1351,21 +1353,23 @@ blockquote cite {
   display: block;
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 8px;
-  margin: 6px 0;
+  margin: 12px 0;
   padding: 0.5rem;
 }
 
 .main-container-travel .fields{
-  display: flex;
   align-items: center;
+  display: grid;
+  /* flex-wrap: grid; */
   justify-content: space-between;
-  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
 }
 
 form .fields .input-field{
   display: flex;
-  width: calc(100% / 3 -15px);
+  /* width: calc(100% / 3 -15px); */
+  width: 100%;
   flex-direction: column;
   margin: 4px 0;
 }
@@ -1387,7 +1391,7 @@ form .fields .input-field{
   font-size: 15px;
   font-style: italic;
   font-weight: 400;
-  padding: 0 15px;
+  padding: 0 12px;
   height: 42px;
   margin: 8px 0;
   border: 1px solid var(--color-primary);
@@ -1561,25 +1565,26 @@ input[type=radio] {
     grid-column: 1 / 3;
   }
 
-  /* -- BURGER MENU -- */
+  /* -- HEADER MENU -- */
   .header-navbar {
     align-items: flex-start;
-    display: none;
     background-color: var(--color-primary);
+    color: white;
+    display: flex;
     flex-direction: column;
     height: auto;
     max-width: 300px;
     padding-top: 1rem;
     position: absolute;
-    right: 0px;
-    top: 72px;
+    right: -300px;
+    top: 82px;
+    transition: 0.4s ease-in-out;
     width: 100%;
     z-index: 10;
-    color: white;
   }
 
   .header-navbar.active {
-    display: flex;
+    right: 0;
   }
   
   .header-burger-btn {
@@ -1601,7 +1606,6 @@ input[type=radio] {
     transition: 0.2s;
   }
   .header-btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
     padding: 1rem 1.5rem;
   }
   .header-btn:active {
@@ -1694,6 +1698,11 @@ input[type=radio] {
 
   .pack-price-table {
     max-width: 100%;
+  }
+
+  /* -- VIAJE FORM -- */
+  .main-container-travel .fields{
+    grid-template-columns: 1fr 1fr;
   }
 
   /* -- CARRITO -- */
@@ -1856,6 +1865,11 @@ input[type=radio] {
   }
 
   /* -- FORMS -- */
+  /* -- VIAJE FORM -- */
+  .main-container-travel .fields{
+    grid-template-columns: 1fr;
+  }
+  
   form .fields .input-field {
     width: 100%;
   }
