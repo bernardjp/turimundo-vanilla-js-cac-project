@@ -392,7 +392,7 @@ class PaqueteDetalle {
 
     for(const img of elementosImagen) {
       img.addEventListener("error", () => {
-        img.src = "/assets/turimundo_logo_w.webp";
+        img.src = "assets/turimundo_logo_w.webp";
         img.classList.add("placeholder");
       });
     }
