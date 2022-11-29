@@ -324,7 +324,7 @@ class PaqueteDetalle {
             <p class="small-note">(2) Impuestos sujetos a modificaciones de las compañías aéreas.</p>
           </div>
           <div>
-            <img class="price-table-img" src="/assets/images/viajar_1.webp" alt="viajamos juntos"/>
+            <img class="price-table-img" src="assets/images/viajar_1.webp" alt="viajamos juntos"/>
           </div>
         </div>
       </details>
