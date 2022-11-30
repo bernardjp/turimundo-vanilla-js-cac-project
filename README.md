@@ -24,12 +24,12 @@ The purpose of the exercise was to encompass all basics concepts approached by t
 
 <br>
 <h2>Display details</h2>
-<p style="margin-bottom: 1.5rem">In the detail page you will find a wide array of information including price detail, google maps integration, detailed itinerary, etc.</p>
+<p style="margin-bottom: 1.5rem">In the detail page you will find a wide array of information including price detail, google maps integration, detailed itinerary, etc. Each pack page is generated dynamically making use of the "id" query parameter.</p>
 <img src="readme/details-animation.gif" alt="details-gif" width="1014"/>
 
 <br>
 <h2>Add to Cart and Checkout!</h2>
-<p style="margin-bottom: 1.5rem">Inside each Pokémon Snap on this album you will find a wide array of information including its number in the National Pokédex, its oficial art, its name, its types, size, weight, stats, and more.</p>
+<p style="margin-bottom: 1.5rem">Once you added the pack into the cart you can proceed to the checkout page, there you can remove the pack from the shoping cart, go back to the details page, or finish the purchase. The cart stores all its items in the localStorage, and deletes them once the "purchase" is finished.</p>
 <img src="readme/cart-animation.gif" alt="cart-gif" width="1014"/>
 
 <br>
