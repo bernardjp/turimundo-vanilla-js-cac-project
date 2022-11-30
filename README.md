@@ -20,17 +20,17 @@ The purpose of the exercise was to encompass all basics concepts approached by t
 <br>
 <h2>Navigate</h2>
 <p style="margin-bottom: 1.5rem">The data is stored locally in the project and contains all the information needed about each pack. Each card shows the name and basic info of each pack and can be filtered out to speed up the searching process. Click on the "card" and gain access to the detail page associated with the pack.</p>
-<img src="https://i.gyazo.com/59702d3c9d392626fffa2c531de68cd8.gif" alt="navigation-gif" width="1014"/>
+<img src="readme/navigation-animation.gif" alt="navigation-gif" width="1014"/>
 
 <br>
 <h2>Display details</h2>
 <p style="margin-bottom: 1.5rem">In the detail page you will find a wide array of information including price detail, google maps integration, detailed itinerary, etc.</p>
-<img src="https://i.gyazo.com/2cf137b4f85f9d46426c11fb19097323.gif" alt="display-gif" width="1084"/>
+<img src="readme/details-animation.gif" alt="details-gif" width="1014"/>
 
 <br>
 <h2>Add to Cart and Checkout!</h2>
 <p style="margin-bottom: 1.5rem">Inside each Pokémon Snap on this album you will find a wide array of information including its number in the National Pokédex, its oficial art, its name, its types, size, weight, stats, and more.</p>
-<img src="https://i.gyazo.com/285620d2240eb37ff4c74e7008a18586.gif" alt="Image from Gyazo" width="1050"/>
+<img src="readme/cart-animation.gif" alt="cart-gif" width="1014"/>
 
 <br>
 <br>
